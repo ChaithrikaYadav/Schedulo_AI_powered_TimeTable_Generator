@@ -1,0 +1,133 @@
+Room ID,Building,Floor,Room Number,Type,Department
+ENG-101,ENG,1,101,Classroom,School of Computer Science & Engineering
+ENG-102,ENG,1,102,Classroom,School of Computer Science & Engineering
+ENG-103,ENG,1,103,Classroom,School of Computer Science & Engineering
+ENG-104,ENG,1,104,Classroom,School of Computer Science & Engineering
+ENG-105,ENG,1,105,Classroom,School of Computer Science & Engineering
+ENG-106,ENG,1,106,Classroom,School of Computer Science & Engineering
+ENG-107,ENG,1,107,Classroom,School of Computer Science & Engineering
+ENG-108,ENG,1,108,Classroom,School of Computer Science & Engineering
+ENG-109,ENG,1,109,Classroom,School of Computer Science & Engineering
+ENG-110,ENG,1,110,Classroom,School of Computer Science & Engineering
+ENG-201,ENG,2,201,Classroom,School of Computer Science & Engineering
+ENG-202,ENG,2,202,Classroom,School of Computer Science & Engineering
+ENG-203,ENG,2,203,Classroom,School of Computer Science & Engineering
+ENG-204,ENG,2,204,Classroom,School of Computer Science & Engineering
+ENG-205,ENG,2,205,Classroom,School of Computer Science & Engineering
+ENG-206,ENG,2,206,Classroom,School of Computer Science & Engineering
+ENG-207,ENG,2,207,Classroom,School of Computer Science & Engineering
+ENG-208,ENG,2,208,Classroom,School of Computer Science & Engineering
+ENG-209,ENG,2,209,Classroom,School of Computer Science & Engineering
+ENG-210,ENG,2,210,Classroom,School of Computer Science & Engineering
+ENG-401,ENG,4,401,Classroom,School of Computer Science & Engineering
+ENG-402,ENG,4,402,Classroom,School of Computer Science & Engineering
+ENG-403,ENG,4,403,Classroom,School of Computer Science & Engineering
+ENG-404,ENG,4,404,Classroom,School of Computer Science & Engineering
+ENG-405,ENG,4,405,Classroom,School of Computer Science & Engineering
+ENG-406,ENG,4,406,Classroom,School of Computer Science & Engineering
+ENG-407,ENG,4,407,Classroom,School of Computer Science & Engineering
+ENG-408,ENG,4,408,Classroom,School of Computer Science & Engineering
+ENG-409,ENG,4,409,Classroom,School of Computer Science & Engineering
+ENG-410,ENG,4,410,Classroom,School of Computer Science & Engineering
+SVH-111,SVH,1,111,Lab,School of Computer Science & Engineering
+SVH-112,SVH,1,112,Lab,School of Computer Science & Engineering
+SVH-102,SVH,1,102,Lab,School of Computer Science & Engineering
+SVH-103,SVH,1,103,Lab,School of Computer Science & Engineering
+SVH-213,SVH,2,213,Lab,School of Computer Science & Engineering
+SVH-101,SVH,1,101,Classroom,School of Computer Science & Engineering
+SVH-104,SVH,1,104,Classroom,School of Computer Science & Engineering
+SVH-105,SVH,1,105,Classroom,School of Computer Science & Engineering
+SVH-106,SVH,1,106,Classroom,School of Computer Science & Engineering
+SVH-107,SVH,1,107,Classroom,School of Computer Science & Engineering
+SVH-108,SVH,1,108,Classroom,School of Computer Science & Engineering
+SVH-109,SVH,1,109,Classroom,School of Computer Science & Engineering
+SVH-110,SVH,1,110,Classroom,School of Computer Science & Engineering
+SVH-201,SVH,2,201,Classroom,School of Computer Science & Engineering
+SVH-202,SVH,2,202,Classroom,School of Computer Science & Engineering
+SVH-203,SVH,2,203,Classroom,School of Computer Science & Engineering
+SVH-204,SVH,2,204,Classroom,School of Computer Science & Engineering
+SVH-205,SVH,2,205,Classroom,School of Computer Science & Engineering
+SVH-206,SVH,2,206,Classroom,School of Computer Science & Engineering
+SVH-207,SVH,2,207,Classroom,School of Computer Science & Engineering
+SVH-208,SVH,2,208,Classroom,School of Computer Science & Engineering
+SVH-209,SVH,2,209,Classroom,School of Computer Science & Engineering
+SVH-210,SVH,2,210,Classroom,School of Computer Science & Engineering
+SVH-301,SVH,3,301,Classroom,School of Computer Science & Engineering
+SVH-302,SVH,3,302,Classroom,School of Computer Science & Engineering
+IGSM-101,IGSM,1,101,Classroom,Management
+IGSM-102,IGSM,1,102,Classroom,Management
+IGSM-103,IGSM,1,103,Classroom,Management
+IGSM-104,IGSM,1,104,Classroom,Management
+IGSM-105,IGSM,1,105,Classroom,Management
+IGSM-106,IGSM,1,106,Classroom,Management
+IGSM-107,IGSM,1,107,Classroom,Management
+IGSM-108,IGSM,1,108,Classroom,Management
+IGSM-109,IGSM,1,109,Classroom,Management
+IGSM-110,IGSM,1,110,Classroom,Management
+IGSM-201,IGSM,2,201,Classroom,Management
+IGSM-202,IGSM,2,202,Classroom,Management
+IGSM-203,IGSM,2,203,Classroom,Management
+IGSM-204,IGSM,2,204,Classroom,Management
+IGSM-205,IGSM,2,205,Classroom,Management
+IGSM-206,IGSM,2,206,Classroom,Management
+IGSM-207,IGSM,2,207,Classroom,Management
+IGSM-208,IGSM,2,208,Classroom,Management
+IGSM-209,IGSM,2,209,Classroom,Management
+IGSM-210,IGSM,2,210,Classroom,Management
+IGSM-301,IGSM,3,301,Classroom,Management
+IGSM-302,IGSM,3,302,Classroom,Management
+IGSM-303,IGSM,3,303,Classroom,Management
+IGSM-304,IGSM,3,304,Classroom,Management
+IGSM-305,IGSM,3,305,Classroom,Management
+IGSM-306,IGSM,3,306,Classroom,Management
+IGSM-401,IGSM,4,401,Classroom,Management
+IGSM-402,IGSM,4,402,Classroom,Management
+IGSM-403,IGSM,4,403,Classroom,Management
+IGSM-211,IGSM,2,211,Lab,Management
+IGSM-212,IGSM,2,212,Lab,Management
+LAW-101,LAW,1,101,Classroom,Law
+LAW-102,LAW,1,102,Classroom,Law
+LAW-103,LAW,1,103,Classroom,Law
+LAW-104,LAW,1,104,Classroom,Law
+LAW-105,LAW,1,105,Classroom,Law
+LAW-106,LAW,1,106,Classroom,Law
+LAW-107,LAW,1,107,Classroom,Law
+LAW-108,LAW,1,108,Classroom,Law
+LAW-109,LAW,1,109,Classroom,Law
+LAW-110,LAW,1,110,Classroom,Law
+LAW-201,LAW,2,201,Classroom,Law
+LAW-202,LAW,2,202,Classroom,Law
+LAW-203,LAW,2,203,Classroom,Law
+LAW-204,LAW,2,204,Classroom,Law
+LAW-205,LAW,2,205,Classroom,Law
+LAW-206,LAW,2,206,Classroom,Law
+LAW-207,LAW,2,207,Classroom,Law
+LAW-208,LAW,2,208,Classroom,Law
+LAW-209,LAW,2,209,Classroom,Law
+LAW-210,LAW,2,210,Classroom,Law
+LAW-MCH,LAW,1,Moot Court Hall,Special,Law
+ADM-DellLab,ADM,1,Dell Lab,Lab,General
+ADM-IOSLab,ADM,1,IOS Lab,Lab,General
+ADM-201,ADM,2,201,Classroom,General / Shared
+ADM-202,ADM,2,202,Classroom,General / Shared
+ADM-203,ADM,2,203,Classroom,General / Shared
+ADM-204,ADM,2,204,Classroom,General / Shared
+ADM-205,ADM,2,205,Classroom,General / Shared
+ADM-206,ADM,2,206,Classroom,General / Shared
+ADM-207,ADM,2,207,Classroom,General / Shared
+ADM-208,ADM,2,208,Classroom,General / Shared
+ADM-209,ADM,2,209,Classroom,General / Shared
+ADM-210,ADM,2,210,Classroom,General / Shared
+GH-101,GH,1,101,Classroom,General
+GH-102,GH,1,102,Classroom,General
+GH-103,GH,1,103,Classroom,General
+GH-201,GH,2,201,Classroom,General
+GH-202,GH,2,202,Classroom,General
+GH-301,GH,3,301,Classroom,General
+GH-302,GH,3,302,Classroom,General
+NR-PhysicsLab,NR,1,Physics Lab,Lab,Science
+NR-DECOLab,NR,1,DECO Lab,Lab,Electronics
+NR-ElectronicsLab,NR,1,Electronics Lab,Lab,Electronics
+NR-MachineLab,NR,1,Machine Lab,Lab,Engineering
+NR-ChemistryLab,NR,1,Chemistry Lab,Lab,Science
+NR-BioLab,NR,1,Bio Lab,Lab,Science

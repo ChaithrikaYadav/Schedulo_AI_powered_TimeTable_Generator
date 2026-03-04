@@ -1,0 +1,118 @@
+Department,Duration (Years),Section_ID,Semester,Strength,Program
+School of Management,4,2BBA1,Sem 3,45,BBA
+School of Management,4,4BBA1,Sem 7,40,BBA
+School of Management,4,1BBA1,Sem 1,43,BBA
+School of Management,4,3BBA1,Sem 5,59,BBA
+School of Management,4,2BBA2,Sem 3,57,BBA
+School of Management,4,3BCOM1,Sem 5,47,B.Com (Hons.)
+School of Management,4,3BCOM2,Sem 5,55,B.Com (Hons.)
+School of Management,4,4BCOM1,Sem 7,52,B.Com (Hons.)
+School of Management,4,1BCOM1,Sem 1,45,B.Com (Hons.)
+School of Management,4,2BCOM1,Sem 3,47,B.Com (Hons.)
+School of Management,2,1MBA1,Sem 1,59,MBA
+School of Management,2,1MBA2,Sem 1,41,MBA
+School of Management,2,2MBA1,Sem 3,46,MBA
+School of Management,2,2MBA2,Sem 3,52,MBA
+School of Management,2,2MBA3,Sem 3,50,MBA
+School of Computer Science & Engineering,4,2CSE1,Sem 3,51,B.Tech CSE
+School of Computer Science & Engineering,4,4CSE1,Sem 7,51,B.Tech CSE
+School of Computer Science & Engineering,4,3CSE1,Sem 5,48,B.Tech CSE
+School of Computer Science & Engineering,4,3CSE2,Sem 5,53,B.Tech CSE
+School of Computer Science & Engineering,4,3CSE3,Sem 5,46,B.Tech CSE
+School of Computer Science & Engineering,4,3CSE4,Sem 5,52,B.Tech CSE
+School of Computer Science & Engineering,4,3CSE5,Sem 5,42,B.Tech CSE
+School of Computer Science & Engineering,4,3CSE6,Sem 5,60,B.Tech CSE
+School of Computer Science & Engineering,4,1CSE1,Sem 1,45,B.Tech CSE
+School of Computer Science & Engineering,4,4CSE2,Sem 7,42,B.Tech CSE
+School of Computer Science & Engineering,4,4CSE3,Sem 7,55,B.Tech CSE
+School of Computer Science & Engineering,4,2CSE2,Sem 3,45,B.Tech CSE
+School of Computer Science & Engineering,4,1BCA1,Sem 1,47,BCA
+School of Computer Science & Engineering,4,1BCA2,Sem 1,44,BCA
+School of Computer Science & Engineering,4,1BCA3,Sem 1,41,BCA
+School of Computer Science & Engineering,4,2BCA1,Sem 3,57,BCA
+School of Computer Science & Engineering,4,2BCA2,Sem 3,44,BCA
+School of Computer Science & Engineering,2,2MCA1,Sem 3,44,MCA
+School of Computer Science & Engineering,2,1MCA1,Sem 1,52,MCA
+School of Computer Science & Engineering,2,1MCA2,Sem 1,58,MCA
+School of Computer Science & Engineering,2,1MCA3,Sem 1,48,MCA
+School of Computer Science & Engineering,2,1MCA4,Sem 1,42,MCA
+School of Hospitality & Services Management,4,4BHM1,Sem 7,46,BHM
+School of Hospitality & Services Management,4,3BHM1,Sem 5,45,BHM
+School of Hospitality & Services Management,4,4BHM2,Sem 7,52,BHM
+School of Hospitality & Services Management,4,4BHM3,Sem 7,40,BHM
+School of Hospitality & Services Management,4,3BHM2,Sem 5,56,BHM
+School of Hospitality & Services Management,4,1BHT1,Sem 1,60,B.Sc Hospitality & Tourism
+School of Hospitality & Services Management,4,3BHT1,Sem 5,51,B.Sc Hospitality & Tourism
+School of Hospitality & Services Management,4,2BHT1,Year 2 / Sem 3,45,B.Sc Hospitality & Tourism
+School of Hospitality & Services Management,4,4BHT1,Year 4 / Sem 7,58,B.Sc Hospitality & Tourism
+School of Hospitality & Services Management,4,2BHT2,Year 2 / Sem 3,56,B.Sc Hospitality & Tourism
+School of Hospitality & Services Management,3,2DCA1,Year 2 / Sem 3,58,Diploma Culinary Arts
+School of Hospitality & Services Management,3,3DCA1,Year 3 / Sem 5,53,Diploma Culinary Arts
+School of Hospitality & Services Management,3,1DCA1,Year 1 / Sem 1,60,Diploma Culinary Arts
+School of Hospitality & Services Management,3,1DCA2,Year 1 / Sem 1,43,Diploma Culinary Arts
+School of Hospitality & Services Management,3,3DCA2,Year 3 / Sem 5,54,Diploma Culinary Arts
+IILM Law School,5,4BALLB1,Year 4 / Sem 7,51,BA LLB (Hons.)
+IILM Law School,5,4BALLB2,Year 4 / Sem 7,58,BA LLB (Hons.)
+IILM Law School,5,2BALLB1,Year 2 / Sem 3,52,BA LLB (Hons.)
+IILM Law School,5,3BALLB1,Year 3 / Sem 5,54,BA LLB (Hons.)
+IILM Law School,5,3BALLB2,Year 3 / Sem 5,60,BA LLB (Hons.)
+IILM Law School,5,4BBALLB1,Year 4 / Sem 7,47,BBA LLB (Hons.)
+IILM Law School,5,4BBALLB2,Year 4 / Sem 7,55,BBA LLB (Hons.)
+IILM Law School,5,1BBALLB1,Year 1 / Sem 1,49,BBA LLB (Hons.)
+IILM Law School,5,1BBALLB2,Year 1 / Sem 1,49,BBA LLB (Hons.)
+IILM Law School,5,3BBALLB1,Year 3 / Sem 5,51,BBA LLB (Hons.)
+IILM Law School,3,2LLB1,Year 2 / Sem 3,53,LLB
+IILM Law School,3,2LLB2,Year 2 / Sem 3,58,LLB
+IILM Law School,3,3LLB1,Year 3 / Sem 5,46,LLB
+IILM Law School,3,1LLB1,Year 1 / Sem 1,42,LLB
+IILM Law School,3,1LLB2,Year 1 / Sem 1,59,LLB
+Department of Design,4,3BDES1,Year 3 / Sem 5,60,B.Des
+Department of Design,4,3BDES2,Year 3 / Sem 5,47,B.Des
+Department of Design,4,2BDES1,Year 2 / Sem 3,56,B.Des
+Department of Design,4,2BDES2,Year 2 / Sem 3,48,B.Des
+Department of Design,4,2BDES3,Year 2 / Sem 3,48,B.Des
+Department of Design,2,1MDES1,Year 1 / Sem 1,55,M.Des
+Department of Design,2,1MDES2,Year 1 / Sem 1,49,M.Des
+Department of Design,2,1MDES3,Year 1 / Sem 1,52,M.Des
+Department of Design,2,2MDES1,Year 2 / Sem 3,41,M.Des
+Department of Design,2,2MDES2,Year 2 / Sem 3,60,M.Des
+Department of Psychology,4,1BAPSY1,Year 1 / Sem 1,41,BA Psychology
+Department of Psychology,4,3BAPSY1,Year 3 / Sem 5,47,BA Psychology
+Department of Psychology,4,3BAPSY2,Year 3 / Sem 5,41,BA Psychology
+Department of Psychology,4,4BAPSY1,Year 4 / Sem 7,54,BA Psychology
+Department of Psychology,4,2BAPSY1,Year 2 / Sem 3,46,BA Psychology
+Department of Psychology,4,1BSCPSY1,Year 1 / Sem 1,52,B.Sc Psychology
+Department of Psychology,4,2BSCPSY1,Year 2 / Sem 3,57,B.Sc Psychology
+Department of Psychology,4,3BSCPSY1,Year 3 / Sem 5,46,B.Sc Psychology
+Department of Psychology,4,3BSCPSY2,Year 3 / Sem 5,42,B.Sc Psychology
+Department of Psychology,4,3BSCPSY3,Year 3 / Sem 5,46,B.Sc Psychology
+Department of Psychology,2,2MSCPSY1,Year 2 / Sem 3,59,M.Sc Clinical Psychology
+Department of Psychology,2,1MSCPSY1,Year 1 / Sem 1,48,M.Sc Clinical Psychology
+Department of Psychology,2,1MSCPSY2,Year 1 / Sem 1,55,M.Sc Clinical Psychology
+Department of Psychology,2,2MSCPSY2,Year 2 / Sem 3,49,M.Sc Clinical Psychology
+Department of Psychology,2,1MSCPSY3,Year 1 / Sem 1,55,M.Sc Clinical Psychology
+Department of Journalism & Communication,4,4BAJMC1,Year 4 / Sem 7,60,BA Journalism & Mass Communication
+Department of Journalism & Communication,4,3BAJMC1,Year 3 / Sem 5,40,BA Journalism & Mass Communication
+Department of Journalism & Communication,4,1BAJMC1,Year 1 / Sem 1,41,BA Journalism & Mass Communication
+Department of Journalism & Communication,4,1BAJMC2,Year 1 / Sem 1,53,BA Journalism & Mass Communication
+Department of Journalism & Communication,4,2BAJMC1,Year 2 / Sem 3,43,BA Journalism & Mass Communication
+Department of Journalism & Communication,2,1MAJMC1,Year 1 / Sem 1,52,MA Journalism
+Department of Journalism & Communication,2,2MAJMC1,Year 2 / Sem 3,55,MA Journalism
+Department of Journalism & Communication,2,1MAJMC2,Year 1 / Sem 1,59,MA Journalism
+Department of Journalism & Communication,2,1MAJMC3,Year 1 / Sem 1,49,MA Journalism
+Department of Journalism & Communication,2,1MAJMC4,Year 1 / Sem 1,43,MA Journalism
+Department of Liberal Arts & Social Sciences,4,2BALA1,Year 2 / Sem 3,50,BA Liberal Arts
+Department of Liberal Arts & Social Sciences,4,3BALA1,Year 3 / Sem 5,55,BA Liberal Arts
+Department of Liberal Arts & Social Sciences,4,1BALA1,Year 1 / Sem 1,47,BA Liberal Arts
+Department of Liberal Arts & Social Sciences,4,3BALA2,Year 3 / Sem 5,51,BA Liberal Arts
+Department of Liberal Arts & Social Sciences,4,1BALA2,Year 1 / Sem 1,60,BA Liberal Arts
+Department of Liberal Arts & Social Sciences,4,3BAPS1,Year 3 / Sem 5,50,BA Political Science
+Department of Liberal Arts & Social Sciences,4,2BAPS1,Year 2 / Sem 3,40,BA Political Science
+Department of Liberal Arts & Social Sciences,4,4BAPS1,Year 4 / Sem 7,45,BA Political Science
+Department of Liberal Arts & Social Sciences,4,3BAPS2,Year 3 / Sem 5,42,BA Political Science
+Department of Liberal Arts & Social Sciences,4,2BAPS2,Year 2 / Sem 3,40,BA Political Science
+Department of Liberal Arts & Social Sciences,4,2BASO1,Year 2 / Sem 3,44,BA Sociology
+Department of Liberal Arts & Social Sciences,4,4BASO1,Year 4 / Sem 7,57,BA Sociology
+Department of Liberal Arts & Social Sciences,4,4BASO2,Year 4 / Sem 7,45,BA Sociology
+Department of Liberal Arts & Social Sciences,4,2BASO2,Year 2 / Sem 3,44,BA Sociology
+Department of Liberal Arts & Social Sciences,4,3BASO1,Year 3 / Sem 5,58,BA Sociology

@@ -1,0 +1,274 @@
+Department,Subject Name,Subject Type,Credits
+School of Computer Science & Engineering,Programming in C,Theory,4
+School of Computer Science & Engineering,Data Structures,Theory,4
+School of Computer Science & Engineering,Operating Systems,Theory,4
+School of Computer Science & Engineering,Computer Networks,Theory,4
+School of Computer Science & Engineering,Computer Networks,Theory,4
+School of Computer Science & Engineering,Computer Networks,Theory,4
+School of Computer Science & Engineering,Computer Networks,Theory,4
+School of Computer Science & Engineering,DBMS,Theory,4
+School of Computer Science & Engineering,DBMS Lab,Lab,2
+School of Computer Science & Engineering,Python Lab,Lab,2
+School of Computer Science & Engineering,Mini Project I,Project,1
+School of Computer Science & Engineering,OOP with Java,Theory,4
+School of Computer Science & Engineering,Software Engineering,Theory,4
+School of Computer Science & Engineering,Discrete Mathematics,Theory,4
+School of Computer Science & Engineering,Algorithms,Theory,4
+School of Computer Science & Engineering,Web Technologies,Theory,4
+School of Computer Science & Engineering,Computer Architecture,Theory,4
+School of Computer Science & Engineering,Compiler Design,Theory,4
+School of Computer Science & Engineering,Machine Learning,Theory,4
+School of Computer Science & Engineering,ML Lab,Lab,2
+School of Computer Science & Engineering,Cloud Computing,Theory,4
+School of Computer Science & Engineering,AI Lab,Lab,2
+School of Computer Science & Engineering,Cyber Security,Theory,4
+School of Computer Science & Engineering,Mobile App Development,Theory,4
+School of Computer Science & Engineering,Flutter Lab,Lab,2
+School of Computer Science & Engineering,IoT Systems,Theory,4
+School of Computer Science & Engineering,IoT Lab,Lab,2
+School of Computer Science & Engineering,Major Project I,Project,1
+School of Computer Science & Engineering,Major Project II,Project,1
+School of Computer Science & Engineering,Internship/Training,Project,1
+School of Computer Science & Engineering,Database Security,Theory,4
+School of Computer Science & Engineering,Networking Lab,Lab,2
+School of Computer Science & Engineering,Data Visualization,Theory,4
+School of Computer Science & Engineering,Principles of Management,Theory,4
+School of Computer Science & Engineering,Marketing Management,Theory,4
+School of Computer Science & Engineering,Financial Accounting,Theory,4
+School of Computer Science & Engineering,Business Economics,Theory,4
+School of Computer Science & Engineering,Organizational Behavior,Theory,4
+School of Computer Science & Engineering,Business Analytics,Theory,4
+School of Computer Science & Engineering,Excel & Data Tools Lab,Lab,2
+School of Computer Science & Engineering,Business Seminar,Project,1
+School of Computer Science & Engineering,Business Law,Theory,4
+School of Computer Science & Engineering,Human Resource Management,Theory,4
+School of Computer Science & Engineering,Corporate Finance,Theory,4
+School of Computer Science & Engineering,Statistics for Business,Theory,4
+School of Computer Science & Engineering,Consumer Behavior,Theory,4
+School of Computer Science & Engineering,Operations Management,Theory,4
+School of Computer Science & Engineering,International Business,Theory,4
+School of Computer Science & Engineering,Entrepreneurship Development,Theory,4
+School of Computer Science & Engineering,Marketing Research,Theory,4
+School of Computer Science & Engineering,Taxation Laws,Theory,4
+School of Computer Science & Engineering,Cost Accounting,Theory,4
+School of Computer Science & Engineering,Advertising & Sales Promotion,Theory,4
+School of Computer Science & Engineering,Banking & Insurance,Theory,4
+School of Computer Science & Engineering,Financial Management,Theory,4
+School of Computer Science & Engineering,E-Commerce,Theory,4
+School of Computer Science & Engineering,CRM Systems,Theory,4
+School of Computer Science & Engineering,Retail Management,Theory,4
+School of Computer Science & Engineering,Supply Chain Management,Theory,4
+School of Computer Science & Engineering,Internship Project,Project,1
+School of Computer Science & Engineering,Summer Training Report,Project,1
+School of Computer Science & Engineering,Communications Lab,Lab,2
+School of Computer Science & Engineering,Business Simulation Lab,Lab,2
+School of Computer Science & Engineering,Basics of Food Production,Theory,4
+School of Computer Science & Engineering,Food Production Lab,Lab,2
+School of Computer Science & Engineering,Housekeeping Operations,Theory,4
+School of Computer Science & Engineering,Front Office Management,Theory,4
+School of Computer Science & Engineering,Hotel Accounting,Theory,4
+School of Computer Science & Engineering,Bakery & Confectionery Lab,Lab,2
+School of Computer Science & Engineering,Hospitality Ethics,Theory,4
+School of Computer Science & Engineering,Internship/Training Project,Project,1
+School of Computer Science & Engineering,Food & Beverage Service,Theory,4
+School of Computer Science & Engineering,F&B Service Lab,Lab,2
+School of Computer Science & Engineering,Nutrition & Hygiene,Theory,4
+School of Computer Science & Engineering,Bar Operations Lab,Lab,2
+School of Computer Science & Engineering,Tourism Geography,Theory,4
+School of Computer Science & Engineering,Culinary Art,Theory,4
+School of Computer Science & Engineering,Room Division Management,Theory,4
+School of Computer Science & Engineering,Events Management,Theory,4
+School of Computer Science & Engineering,Travel Agency Management,Theory,4
+School of Computer Science & Engineering,Wine Studies,Theory,4
+School of Computer Science & Engineering,Bakery Advanced Lab,Lab,2
+School of Computer Science & Engineering,Resort Management,Theory,4
+School of Computer Science & Engineering,Hotel Software Systems Lab,Lab,2
+School of Computer Science & Engineering,French Language for Hospitality,Theory,4
+School of Computer Science & Engineering,Customer Relationship Management,Theory,4
+School of Computer Science & Engineering,Front Office Simulation Lab,Lab,2
+School of Computer Science & Engineering,Food Cost Control,Theory,4
+School of Computer Science & Engineering,Industrial Exposure Training,Project,1
+School of Computer Science & Engineering,Hospitality Law,Theory,4
+School of Computer Science & Engineering,Inventory Management,Theory,4
+School of Computer Science & Engineering,Sustainable Tourism,Theory,4
+School of Computer Science & Engineering,Gastronomy,Theory,4
+Law,Constitutional Law,Theory,4
+Law,Criminal Law I,Theory,4
+Law,Law of Contracts,Theory,4
+Law,Family Law,Theory,4
+Law,Legal Methods,Theory,4
+Law,Moot Court Exercise,Project,1
+Law,Drafting Pleading Conveyance,Theory,4
+Law,Professional Ethics,Theory,4
+Law,Property Law,Theory,4
+Law,Administrative Law,Theory,4
+Law,Jurisprudence,Theory,4
+Law,Human Rights Law,Theory,4
+Law,Company Law,Theory,4
+Law,Civil Procedure Code,Theory,4
+Law,Criminal Procedure Code,Theory,4
+Law,Alternative Dispute Resolution,Theory,4
+Law,Intellectual Property Rights,Theory,4
+Law,International Law,Theory,4
+Law,Environmental Law,Theory,4
+Law,Law of Evidence,Theory,4
+Law,Banking Law,Theory,4
+Law,Insurance Law,Theory,4
+Law,Cyber Law,Theory,4
+Law,Competition Law,Theory,4
+Law,Public International Law,Theory,4
+Law,Major Moot Court Project,Project,1
+Law,Internship,Project,1
+Law,Law & Technology,Theory,4
+Law,Sports Law,Theory,4
+Law,Election Law,Theory,4
+Design,Design Fundamentals,Theory,4
+Design,Digital Design Tools,Lab,2
+Design,Typography,Theory,4
+Design,Color Theory,Theory,4
+Design,3D Modeling Lab,Lab,2
+Design,Design Thinking,Theory,4
+Design,Portfolio Development I,Project,1
+Design,Visual Communication,Theory,4
+Design,Animation Basics,Lab,2
+Design,Illustration Design,Theory,4
+Design,Photography Lab,Lab,2
+Design,Brand Identity Design,Theory,4
+Design,UI/UX Design,Theory,4
+Design,UI Prototyping Lab,Lab,2
+Design,Motion Graphics,Lab,2
+Design,Interior Basics,Theory,4
+Design,Architectural Drawing,Theory,4
+Design,Concept Art Lab,Lab,2
+Design,Packaging Design,Theory,4
+Design,Digital Sculpting Lab,Lab,2
+Design,Product Design,Theory,4
+Design,CAD Lab,Lab,2
+Design,Game Design Basics,Theory,4
+Design,3D Rendering Lab,Lab,2
+Design,Major Design Project,Project,1
+Design,Portfolio Development II,Project,1
+Design,Visual Storytelling,Theory,4
+Design,Material Studies,Theory,4
+Design,Design for Society,Theory,4
+Design,Creative Media Lab,Lab,2
+Psychology,Introduction to Psychology,Theory,4
+Psychology,Developmental Psychology,Theory,4
+Psychology,Cognitive Psychology,Theory,4
+Psychology,Abnormal Psychology,Theory,4
+Psychology,Statistics for Psychology,Theory,4
+Psychology,Psychology Lab,Lab,2
+Psychology,Counseling Skills,Theory,4
+Psychology,Research Project I,Project,1
+Psychology,Neuropsychology,Theory,4
+Psychology,Social Psychology,Theory,4
+Psychology,Personality Psychology,Theory,4
+Psychology,Experimental Psychology Lab,Lab,2
+Psychology,Psychometric Assessment,Theory,4
+Psychology,Clinical Psychology,Theory,4
+Psychology,Health Psychology,Theory,4
+Psychology,Positive Psychology,Theory,4
+Psychology,Forensic Psychology,Theory,4
+Psychology,Group Therapy Techniques,Theory,4
+Psychology,Clinical Internship,Project,1
+Psychology,Behavior Modification,Theory,4
+Psychology,Cognitive Neuroscience,Theory,4
+Psychology,Industrial Psychology,Theory,4
+Psychology,Mental Health Testing Lab,Lab,2
+Psychology,Case Study Project,Project,1
+Psychology,Developmental Disorders,Theory,4
+Psychology,Applied Statistics Lab,Lab,2
+Psychology,Human Sexuality,Theory,4
+Psychology,Educational Psychology,Theory,4
+Psychology,Crisis Intervention,Theory,4
+Psychology,Therapeutic Techniques Lab,Lab,2
+Journalism & Communication,Mass Communication Concepts,Theory,4
+Journalism & Communication,Reporting & Editing,Theory,4
+Journalism & Communication,Camera & Lighting Lab,Lab,2
+Journalism & Communication,Media Laws & Ethics,Theory,4
+Journalism & Communication,Digital Journalism,Theory,4
+Journalism & Communication,Radio Production Lab,Lab,2
+Journalism & Communication,Public Relations,Theory,4
+Journalism & Communication,Journalism Project,Project,1
+Journalism & Communication,Television Production,Theory,4
+Journalism & Communication,Investigative Journalism,Theory,4
+Journalism & Communication,Video Editing Lab,Lab,2
+Journalism & Communication,Photojournalism,Theory,4
+Journalism & Communication,Print Media Design,Theory,4
+Journalism & Communication,News Broadcasting Lab,Lab,2
+Journalism & Communication,Media Research,Theory,4
+Journalism & Communication,Corporate Communication,Theory,4
+Journalism & Communication,Advertising Fundamentals,Theory,4
+Journalism & Communication,Scriptwriting,Theory,4
+Journalism & Communication,Magazine Production Lab,Lab,2
+Journalism & Communication,Content Writing,Theory,4
+Journalism & Communication,Social Media Strategy,Theory,4
+Journalism & Communication,Online News Production Lab,Lab,2
+Journalism & Communication,Media Psychology,Theory,4
+Journalism & Communication,Cultural Studies,Theory,4
+Journalism & Communication,PR Campaign Project,Project,1
+Journalism & Communication,Podcasting Lab,Lab,2
+Journalism & Communication,Celebrity Journalism,Theory,4
+Journalism & Communication,Data Journalism,Theory,4
+Journalism & Communication,Election Coverage Lab,Lab,2
+Journalism & Communication,Global Media Systems,Theory,4
+Liberal Arts & Social Sciences,Sociology Fundamentals,Theory,4
+Liberal Arts & Social Sciences,Indian History Overview,Theory,4
+Liberal Arts & Social Sciences,Political Science Basics,Theory,4
+Liberal Arts & Social Sciences,Public Administration,Theory,4
+Liberal Arts & Social Sciences,Human Geography,Theory,4
+Liberal Arts & Social Sciences,Social Survey Methods,Lab,2
+Liberal Arts & Social Sciences,Academic Writing,Theory,4
+Liberal Arts & Social Sciences,Capstone Essay Project,Project,1
+Liberal Arts & Social Sciences,Ethics & Society,Theory,4
+Liberal Arts & Social Sciences,World History,Theory,4
+Liberal Arts & Social Sciences,Indian Polity,Theory,4
+Liberal Arts & Social Sciences,Economics Basics,Theory,4
+Liberal Arts & Social Sciences,Research Methodology,Theory,4
+Liberal Arts & Social Sciences,Field Study Lab,Lab,2
+Liberal Arts & Social Sciences,Philosophy Introduction,Theory,4
+Liberal Arts & Social Sciences,International Relations,Theory,4
+Liberal Arts & Social Sciences,Sustainable Development,Theory,4
+Liberal Arts & Social Sciences,Gender Studies,Theory,4
+Liberal Arts & Social Sciences,Culture & Society,Theory,4
+Liberal Arts & Social Sciences,Creative Writing,Theory,4
+Liberal Arts & Social Sciences,Political Theory,Theory,4
+Liberal Arts & Social Sciences,Indian Culture Studies,Theory,4
+Liberal Arts & Social Sciences,Case Study Project II,Project,1
+Liberal Arts & Social Sciences,Regional Geography,Theory,4
+Liberal Arts & Social Sciences,Peace & Conflict Studies,Theory,4
+Liberal Arts & Social Sciences,Map Interpretation Lab,Lab,2
+Liberal Arts & Social Sciences,Urban Sociology,Theory,4
+Liberal Arts & Social Sciences,Indian Economic Policy,Theory,4
+Liberal Arts & Social Sciences,State Politics,Theory,4
+Liberal Arts & Social Sciences,Human Rights Studies,Theory,4
+Biotechnology,Cell Biology,Theory,4
+Biotechnology,Genetics,Theory,4
+Biotechnology,Biochemistry Lab,Lab,2
+Biotechnology,Microbiology,Theory,4
+Biotechnology,Microbiology Lab,Lab,2
+Biotechnology,Environmental Science,Theory,4
+Biotechnology,Bioinformatics,Theory,4
+Biotechnology,Research Project I,Project,1
+Biotechnology,Molecular Biology,Theory,4
+Biotechnology,Immunology,Theory,4
+Biotechnology,Genetic Engineering Lab,Lab,2
+Biotechnology,Plant Biotechnology,Theory,4
+Biotechnology,Animal Biotechnology,Theory,4
+Biotechnology,Bioprocess Engineering,Theory,4
+Biotechnology,Fermentation Technology Lab,Lab,2
+Biotechnology,Biostatistics,Theory,4
+Biotechnology,Tissue Culture Lab,Lab,2
+Biotechnology,Industrial Biotechnology,Theory,4
+Biotechnology,Clinical Research,Theory,4
+Biotechnology,Proteomics Lab,Lab,2
+Biotechnology,Structural Biology,Theory,4
+Biotechnology,Cancer Biology,Theory,4
+Biotechnology,Enzyme Technology Lab,Lab,2
+Biotechnology,Bioethics & IPR,Theory,4
+Biotechnology,Biomedical Instrumentation,Theory,4
+Biotechnology,Environmental Biotech Lab,Lab,2
+Biotechnology,Major Research Project,Project,1
+Biotechnology,Virology,Theory,4
+Biotechnology,Bioremediation,Theory,4
+Biotechnology,Food Biotechnology,Theory,4

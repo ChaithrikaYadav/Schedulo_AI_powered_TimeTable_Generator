@@ -1,0 +1,91 @@
+Teacher ID,Teacher Name,Department,Main Subject,Backup Subject,Max Classes/Week,Preferred Slots,Can Take Labs,Can Be Class Coordinator
+T-CSE-001,Aditi Kumar,School of Computer Science & Engineering,AI Lab,Major Project I,12,No 1st Period,Yes,No
+T-CSE-002,Ananya Sinha,School of Computer Science & Engineering,Internship/Training,Python Lab,16,Morning,No,Yes
+T-CSE-003,Harsh Das,School of Computer Science & Engineering,Internship/Training,Computer Networks,18,Afternoon,No,Yes
+T-CSE-004,Aditi Verma,School of Computer Science & Engineering,Programming in C,DBMS Lab,12,No 1st Period,Yes,Yes
+T-CSE-005,Nidhi Verma,School of Computer Science & Engineering,IoT Lab,IoT Systems,16,No 1st Period,Yes,Yes
+T-CSE-006,Diya Pandey,School of Computer Science & Engineering,IoT Lab,Cyber Security,14,Afternoon,Yes,Yes
+T-CSE-007,Simran Singh,School of Computer Science & Engineering,OOP with Java,Computer Networks,18,Morning,No,No
+T-CSE-008,Sahil Jain,School of Computer Science & Engineering,Machine Learning,Mobile App Development,18,Morning,No,No
+T-CSE-009,Pooja Thakur,School of Computer Science & Engineering,Networking Lab,IoT Lab,12,Any,Yes,Yes
+T-CSE-010,Priya Sharma,School of Computer Science & Engineering,Data Structures,Software Engineering,18,Afternoon,Yes,No
+T-MAN-011,Simran Agarwal,School of Computer Science & Engineering,Business Economics,Human Resource Management,16,Any,No,Yes
+T-MAN-012,Arjun Mishra,School of Computer Science & Engineering,Organizational Behavior,E-Commerce,18,No 1st Period,Yes,No
+T-MAN-013,Riya Agarwal,School of Computer Science & Engineering,Summer Training Report,Business Analytics,16,Any,No,Yes
+T-MAN-014,Kritika Gupta,School of Computer Science & Engineering,Organizational Behavior,Banking & Insurance,14,Morning,No,No
+T-MAN-015,Yash Gupta,School of Computer Science & Engineering,Taxation Laws,Human Resource Management,16,Any,No,Yes
+T-MAN-016,Abhay Gupta,School of Computer Science & Engineering,Internship Project,Financial Management,12,Morning,Yes,No
+T-MAN-017,Meera Thakur,School of Computer Science & Engineering,Business Law,Financial Accounting,14,Afternoon,No,No
+T-MAN-018,Aditi Ahuja,School of Computer Science & Engineering,Business Analytics,Entrepreneurship Development,16,No 1st Period,Yes,Yes
+T-MAN-019,Mansi Sinha,School of Computer Science & Engineering,Banking & Insurance,Financial Accounting,16,Any,No,Yes
+T-MAN-020,Kritika Rathod,School of Computer Science & Engineering,Business Simulation Lab,Internship Project,16,Any,Yes,Yes
+T-HOS-021,Diya Patel,School of Computer Science & Engineering,Inventory Management,Food Cost Control,12,Any,Yes,No
+T-HOS-022,Rahul Yadav,School of Computer Science & Engineering,Gastronomy,Hotel Accounting,18,Morning,Yes,No
+T-HOS-023,Sahil Singh,School of Computer Science & Engineering,Culinary Art,Front Office Management,18,No 1st Period,No,No
+T-HOS-024,Sneha Das,School of Computer Science & Engineering,Food Production Lab,Wine Studies,14,Morning,No,Yes
+T-HOS-025,Diya Yadav,School of Computer Science & Engineering,Nutrition & Hygiene,Industrial Exposure Training,12,Afternoon,No,No
+T-HOS-026,Priya Jain,School of Computer Science & Engineering,Internship/Training Project,Gastronomy,14,Afternoon,Yes,No
+T-HOS-027,Mansi Sharma,School of Computer Science & Engineering,Industrial Exposure Training,Inventory Management,16,No 1st Period,Yes,No
+T-HOS-028,Harsh Singh,School of Computer Science & Engineering,Bar Operations Lab,Wine Studies,14,Any,No,No
+T-HOS-029,Tina Sharma,School of Computer Science & Engineering,Resort Management,Housekeeping Operations,16,Any,No,No
+T-HOS-030,Simran Singh,School of Computer Science & Engineering,Housekeeping Operations,Wine Studies,12,Morning,No,Yes
+T-LAW-031,Diya Ahuja,Law,Legal Methods,Intellectual Property Rights,18,Morning,Yes,No
+T-LAW-032,Ananya Mehta,Law,Criminal Law I,Alternative Dispute Resolution,14,Any,No,No
+T-LAW-033,Ananya Ahuja,Law,Major Moot Court Project,Constitutional Law,18,Any,Yes,Yes
+T-LAW-034,Isha Rathod,Law,Competition Law,Law & Technology,12,No 1st Period,No,Yes
+T-LAW-035,Ritesh Pandey,Law,Banking Law,Law of Contracts,14,Morning,Yes,No
+T-LAW-036,Arjun Rathod,Law,Criminal Law I,Internship,18,Afternoon,No,Yes
+T-LAW-037,Isha Raj,Law,Criminal Law I,Administrative Law,18,Any,No,No
+T-LAW-038,Meera Sharma,Law,Property Law,Administrative Law,16,Morning,No,Yes
+T-LAW-039,Rohan Yadav,Law,Moot Court Exercise,Sports Law,12,Afternoon,Yes,No
+T-LAW-040,Priya Agarwal,Law,Criminal Law I,Civil Procedure Code,14,Afternoon,No,Yes
+T-DES-041,Abhay Mishra,Design,Portfolio Development I,Typography,12,Afternoon,Yes,No
+T-DES-042,Namit Yadav,Design,Product Design,Concept Art Lab,14,Morning,Yes,Yes
+T-DES-043,Yash Kumar,Design,3D Modeling Lab,Design for Society,18,No 1st Period,Yes,Yes
+T-DES-044,Jay Gupta,Design,Visual Storytelling,Photography Lab,18,Morning,No,No
+T-DES-045,Yash Sharma,Design,Design for Society,UI/UX Design,12,Morning,No,Yes
+T-DES-046,Aditi Thakur,Design,3D Rendering Lab,Concept Art Lab,18,No 1st Period,Yes,Yes
+T-DES-047,Anita Bose,Design,Creative Media Lab,Brand Identity Design,12,Any,Yes,Yes
+T-DES-048,Karan Singh,Design,Portfolio Development I,3D Modeling Lab,12,Morning,Yes,Yes
+T-DES-049,Diya Chopra,Design,3D Rendering Lab,Interior Basics,16,No 1st Period,No,No
+T-DES-050,Mansi Raj,Design,Typography,Creative Media Lab,12,Afternoon,No,No
+T-PSY-051,Kritika Agarwal,Psychology,Positive Psychology,Psychology Lab,12,No 1st Period,No,No
+T-PSY-052,Abhay Rathod,Psychology,Introduction to Psychology,Group Therapy Techniques,18,Afternoon,Yes,Yes
+T-PSY-053,Vikas Sinha,Psychology,Human Sexuality,Psychometric Assessment,16,Morning,No,Yes
+T-PSY-054,Mansi Ahuja,Psychology,Clinical Psychology,Abnormal Psychology,14,Morning,No,Yes
+T-PSY-055,Simran Singh,Psychology,Cognitive Psychology,Therapeutic Techniques Lab,14,Afternoon,No,Yes
+T-PSY-056,Diya Sharma,Psychology,Industrial Psychology,Neuropsychology,12,Afternoon,Yes,No
+T-PSY-057,Yash Rathod,Psychology,Developmental Disorders,Cognitive Neuroscience,12,Any,Yes,No
+T-PSY-058,Namit Singh,Psychology,Educational Psychology,Industrial Psychology,12,Morning,Yes,No
+T-PSY-059,Karan Gupta,Psychology,Forensic Psychology,Human Sexuality,18,No 1st Period,Yes,Yes
+T-PSY-060,Riya Sharma,Psychology,Crisis Intervention,Developmental Disorders,12,Morning,Yes,No
+T-JOU-061,Nidhi Jain,Journalism & Communication,Journalism Project,Media Psychology,18,Morning,No,No
+T-JOU-062,Vivek Yadav,Journalism & Communication,Media Laws & Ethics,Print Media Design,12,No 1st Period,No,No
+T-JOU-063,Vikas Singh,Journalism & Communication,Radio Production Lab,Celebrity Journalism,18,No 1st Period,Yes,Yes
+T-JOU-064,Aarav Kumar,Journalism & Communication,Social Media Strategy,PR Campaign Project,16,Any,Yes,No
+T-JOU-065,Ritesh Thakur,Journalism & Communication,Reporting & Editing,Public Relations,16,Afternoon,Yes,No
+T-JOU-066,Rohan Mehta,Journalism & Communication,Media Psychology,Print Media Design,18,Morning,No,No
+T-JOU-067,Ananya Kumar,Journalism & Communication,Corporate Communication,Media Psychology,16,No 1st Period,No,No
+T-JOU-068,Pooja Raj,Journalism & Communication,Video Editing Lab,Celebrity Journalism,14,Morning,No,No
+T-JOU-069,Pooja Gupta,Journalism & Communication,Celebrity Journalism,Social Media Strategy,16,Afternoon,Yes,Yes
+T-JOU-070,Ritesh Singh,Journalism & Communication,Media Research,Advertising Fundamentals,18,Morning,No,Yes
+T-LIB-071,Ritesh Raj,Liberal Arts & Social Sciences,Indian Polity,State Politics,18,Morning,Yes,No
+T-LIB-072,Mansi Das,Liberal Arts & Social Sciences,Political Science Basics,Academic Writing,18,No 1st Period,No,No
+T-LIB-073,Riya Raj,Liberal Arts & Social Sciences,Economics Basics,Gender Studies,12,Any,Yes,No
+T-LIB-074,Simran Singh,Liberal Arts & Social Sciences,Political Science Basics,Field Study Lab,18,No 1st Period,Yes,No
+T-LIB-075,Yash Agarwal,Liberal Arts & Social Sciences,Political Science Basics,State Politics,16,No 1st Period,Yes,Yes
+T-LIB-076,Abhay Pandey,Liberal Arts & Social Sciences,World History,Peace & Conflict Studies,18,No 1st Period,No,No
+T-LIB-077,Abhay Sharma,Liberal Arts & Social Sciences,Gender Studies,Map Interpretation Lab,14,No 1st Period,Yes,No
+T-LIB-078,Namit Raj,Liberal Arts & Social Sciences,Sociology Fundamentals,Capstone Essay Project,16,Morning,Yes,No
+T-LIB-079,Harsh Chopra,Liberal Arts & Social Sciences,Urban Sociology,Indian Culture Studies,18,No 1st Period,No,Yes
+T-LIB-080,Simran Kumar,Liberal Arts & Social Sciences,Field Study Lab,Research Methodology,16,Morning,Yes,Yes
+T-BIO-081,Kritika Raj,Biotechnology,Cell Biology,Plant Biotechnology,16,Any,Yes,No
+T-BIO-082,Arjun Das,Biotechnology,Fermentation Technology Lab,Biostatistics,16,Any,Yes,No
+T-BIO-083,Vivek Singh,Biotechnology,Bioprocess Engineering,Animal Biotechnology,14,Any,Yes,Yes
+T-BIO-084,Namit Kumar,Biotechnology,Plant Biotechnology,Food Biotechnology,14,Morning,Yes,Yes
+T-BIO-085,Pooja Sharma,Biotechnology,Immunology,Biostatistics,12,Morning,No,No
+T-BIO-086,Sahil Thakur,Biotechnology,Biomedical Instrumentation,Proteomics Lab,16,No 1st Period,No,Yes
+T-BIO-087,Abhay Mehta,Biotechnology,Enzyme Technology Lab,Major Research Project,14,No 1st Period,Yes,No
+T-BIO-088,Simran Pandey,Biotechnology,Virology,Cell Biology,12,No 1st Period,Yes,Yes
+T-BIO-089,Sneha Kumar,Biotechnology,Genetic Engineering Lab,Plant Biotechnology,16,No 1st Period,No,No
+T-BIO-090,Rahul Verma,Biotechnology,Animal Biotechnology,Food Biotechnology,18,No 1st Period,No,Yes
