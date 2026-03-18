@@ -1,0 +1,73 @@
+# ── ChronoAI Local Prototype Requirements ──────────────────────────────────────
+# Install: pip install -r requirements.local.txt
+
+# ── Core Web Framework ──────────────────────────────────────────────────────────
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+websockets>=12.0
+
+# ── Database ────────────────────────────────────────────────────────────────────
+sqlalchemy[asyncio]>=2.0.30
+alembic>=1.13.1
+aiosqlite>=0.20.0              # SQLite async driver (Tier 1 default)
+asyncpg>=0.29.0                # PostgreSQL async driver (Tier 2/3)
+
+# ── Auth ────────────────────────────────────────────────────────────────────────
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+fastapi-users[sqlalchemy]>=13.0.0
+
+# ── Config ──────────────────────────────────────────────────────────────────────
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+python-dotenv>=1.0.1
+
+# ── Data / CSV ──────────────────────────────────────────────────────────────────
+pandas>=2.2.0
+numpy>=1.26.0
+openpyxl>=3.1.2
+
+# ── Scheduling Algorithms ────────────────────────────────────────────────────────
+ortools>=9.10.4067             # Google OR-Tools CSP/CP-SAT
+deap>=1.4.1                    # Genetic algorithms
+scikit-learn>=1.4.0            # ML pipeline + Isolation Forest
+
+# ── Machine Learning ─────────────────────────────────────────────────────────────
+xgboost>=2.0.3                 # Quality predictor
+lightgbm>=4.3.0                # Alternative quality predictor
+torch>=2.2.0                   # PyTorch (RL autoencoder)
+stable-baselines3>=2.3.2       # PPO RL agent
+gymnasium>=0.29.1              # RL environment
+optuna>=3.6.1                  # Hyperparameter tuning
+
+# ── AI Agents / LLM ──────────────────────────────────────────────────────────────
+langgraph>=0.1.0               # Multi-agent orchestration
+langchain>=0.2.0               # LLM tooling
+langchain-community>=0.2.0
+huggingface_hub>=0.23.0        # HF Inference API client
+transformers>=4.41.0           # Tokenizer / model utils
+
+# ── Export ───────────────────────────────────────────────────────────────────────
+reportlab>=4.2.0               # PDF generation
+python-docx>=1.1.0             # Word document generation
+
+# ── Task Queue ───────────────────────────────────────────────────────────────────
+celery>=5.4.0
+redis>=5.0.4                   # Redis client (for Celery broker)
+
+# ── Existing Prototype (keep streamlit runnable) ──────────────────────────────────
+streamlit>=1.35.0
+difflib2>=1.0.0; python_version < "3.11"  # difflib is stdlib in Python 3.11+
+
+# ── Testing ───────────────────────────────────────────────────────────────────────
+pytest>=8.2.0
+pytest-asyncio>=0.23.0
+pytest-cov>=5.0.0
+factory-boy>=3.3.0
+hypothesis>=6.103.0
+httpx>=0.27.0                  # async test client for FastAPI
+
+# ── Dev Tools ─────────────────────────────────────────────────────────────────────
+structlog>=24.1.0
+httpx>=0.27.0

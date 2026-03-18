@@ -1,0 +1,112 @@
+version: "3.9"
+
+# ChronoAI — Local Prototype Docker Compose
+# All services bind to localhost only. No external ports exposed beyond LAN.
+# Usage: docker-compose -f docker-compose.local.yml up --build
+
+services:
+
+  # ── PostgreSQL 15 ───────────────────────────────────────────────
+  db:
+    image: postgres:15-alpine
+    container_name: chronoai_db
+    environment:
+      POSTGRES_DB: chronoai_local
+      POSTGRES_USER: chronoai
+      POSTGRES_PASSWORD: localpassword123
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5432:5432"   # localhost only
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chronoai"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # ── Redis 7 ─────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: chronoai_redis
+    ports:
+      - "127.0.0.1:6379:6379"   # localhost only
+    volumes:
+      - ./data/redis:/data
+    restart: unless-stopped
+
+  # ── FastAPI Backend ─────────────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    container_name: chronoai_backend
+    env_file: .env
+    environment:
+      DB_ENGINE: postgresql
+      DATABASE_URL: postgresql+asyncpg://chronoai:localpassword123@db:5432/chronoai_local
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+      ENVIRONMENT: local
+      DEBUG: "true"
+      ALLOWED_ORIGINS: "http://localhost:5173,http://127.0.0.1:5173"
+      STORAGE_BACKEND: local
+      OUTPUT_DIR: /app/outputs
+      MODELS_DIR: /app/models
+      LOGS_DIR: /app/logs
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - .:/app                          # Live code reload
+      - ./outputs:/app/outputs          # Generated timetable files
+      - ./models:/app/models            # Saved ML model files
+      - ./logs:/app/logs                # Application logs
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    command: uvicorn chronoai.main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+
+  # ── Celery Worker ───────────────────────────────────────────────
+  celery_worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    container_name: chronoai_celery
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://chronoai:localpassword123@db:5432/chronoai_local
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+      ENVIRONMENT: local
+    volumes:
+      - .:/app
+      - ./outputs:/app/outputs
+      - ./models:/app/models
+    depends_on:
+      - backend
+      - redis
+    # --pool=solo avoids multiprocessing issues on Windows
+    command: celery -A chronoai.tasks worker --loglevel=info --pool=solo --concurrency=1
+    restart: unless-stopped
+
+  # ── React Frontend ──────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend.local
+    container_name: chronoai_frontend
+    ports:
+      - "127.0.0.1:5173:5173"
+    volumes:
+      - ./frontend/src:/app/src         # Live code reload via Vite HMR
+    environment:
+      VITE_API_URL: http://localhost:8000
+    command: npm run dev -- --host 0.0.0.0
+    depends_on:
+      - backend
+    restart: unless-stopped
