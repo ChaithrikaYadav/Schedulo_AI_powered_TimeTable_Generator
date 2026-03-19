@@ -1,0 +1,10 @@
+{
+  "tests/unit/test_conflict_detector.py::TestConflictDetector::test_cf01_room_double_booking_detected": true,
+  "tests/unit/test_conflict_detector.py::TestConflictDetector::test_cf01_no_conflict_different_rooms": true,
+  "tests/unit/test_conflict_detector.py::TestConflictDetector::test_cf02_faculty_double_booking_detected": true,
+  "tests/unit/test_conflict_detector.py::TestConflictDetector::test_cf02_no_conflict_different_slots": true,
+  "tests/unit/test_conflict_detector.py::TestConflictDetector::test_cf03_missing_lunch_detected": true,
+  "tests/unit/test_conflict_detector.py::TestConflictDetector::test_cf04_isolated_lab_detected": true,
+  "tests/unit/test_conflict_detector.py::TestConflictDetector::test_no_conflicts_clean_timetable": true,
+  "tests/unit/test_scheduler.py::TestPrototypeSchedulerNoCSV::test_random_seed_reproducibility": true
+}
