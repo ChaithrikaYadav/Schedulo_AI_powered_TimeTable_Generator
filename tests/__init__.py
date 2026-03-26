@@ -1,3 +1,3 @@
 """
-tests/__init__.py — ChronoAI test package.
+tests/__init__.py — Schedulo test package.
 """

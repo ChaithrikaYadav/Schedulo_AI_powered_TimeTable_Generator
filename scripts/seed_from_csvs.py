@@ -1,5 +1,5 @@
 """
-scripts/seed_from_csvs.py — Seeds the ChronoAI database from all six CSV files.
+scripts/seed_from_csvs.py — Seeds the Schedulo database from all six CSV files.
 
 Run once after `alembic upgrade head` (PostgreSQL) or after `create_all_tables()` (SQLite):
     python scripts/seed_from_csvs.py
@@ -25,8 +25,8 @@ import pandas as pd
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from chronoai.database import AsyncSessionLocal, create_all_tables
-from chronoai.models import Department, Faculty, Room, Section, Subject
+from schedulo.database import AsyncSessionLocal, create_all_tables
+from schedulo.models import Department, Faculty, Room, Section, Subject
 
 # ─────────────────────────────────────────────────────────────────
 # Department name normalisation map
@@ -508,7 +508,7 @@ async def seed_sections(session: AsyncSession, dept_id_map: dict[str, int]) -> N
 # ─────────────────────────────────────────────────────────────────
 async def main() -> None:
     """Run all seeders in dependency order."""
-    print("\n🌱 ChronoAI — Seeding database from CSV files...\n")
+    print("\n🌱 Schedulo — Seeding database from CSV files...\n")
 
     # Ensure tables exist (SQLite prototype mode)
     await create_all_tables()

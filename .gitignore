@@ -1,1 +1,82 @@
+# ── Virtual environments ───────────────────────────────────────────────────────
 .venv/
+venv/
+env/
+.env/
+
+# ── Environment variables (NEVER commit secrets) ───────────────────────────────
+.env
+.env.local
+.env.server
+.env.cloud
+.env.*.local
+*.env
+
+# ── Databases ──────────────────────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Generated output files (timetable exports) ─────────────────────────────────
+outputs/
+
+# ── ML model weight files (too large for git; retrain locally) ─────────────────
+ml_models/*.pkl
+ml_models/*.joblib
+ml_models/*.h5
+ml_models/*.pt
+ml_models/*.ckpt
+
+# ── Log files ──────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── Docker persistent data volumes ─────────────────────────────────────────────
+data/postgres/
+data/redis/
+
+# ── Python cache ───────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# ── Build artifacts ────────────────────────────────────────────────────────────
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ── OS files ───────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+
+# ── IDE ────────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Node (frontend) ────────────────────────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# ── Coverage and test reports ──────────────────────────────────────────────────
+coverage.xml
+junit.xml
+test-results/
+
+# ── Keep these (not ignored — committed to repo) ───────────────────────────────
+# data/*.csv         — source datasets
+# ml_models/*.py     — training scripts
+# ml_models/README.md
+# outputs/.gitkeep
+# logs/.gitkeep
+# ml_models/.gitkeep

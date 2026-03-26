@@ -1,112 +1,176 @@
 version: "3.9"
-
-# ChronoAI — Local Prototype Docker Compose
-# All services bind to localhost only. No external ports exposed beyond LAN.
+# Schedulo — Local Prototype Docker Compose
 # Usage: docker-compose -f docker-compose.local.yml up --build
+# All services bind to 127.0.0.1 (localhost only). Safe for developer machines.
 
 services:
 
-  # ── PostgreSQL 15 ───────────────────────────────────────────────
+  # ── PostgreSQL 15 ────────────────────────────────────────────────────────────
   db:
     image: postgres:15-alpine
-    container_name: chronoai_db
+    container_name: schedulo_db
     environment:
-      POSTGRES_DB: chronoai_local
-      POSTGRES_USER: chronoai
+      POSTGRES_DB:       schedulo_local
+      POSTGRES_USER:     schedulo
       POSTGRES_PASSWORD: localpassword123
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
     ports:
-      - "127.0.0.1:5432:5432"   # localhost only
+      - "127.0.0.1:5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U chronoai"]
+      test: ["CMD-SHELL", "pg_isready -U schedulo -d schedulo_local"]
       interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 10
+      start_period: 10s
     restart: unless-stopped
 
-  # ── Redis 7 ─────────────────────────────────────────────────────
+  # ── Redis 7 ──────────────────────────────────────────────────────────────────
   redis:
     image: redis:7-alpine
-    container_name: chronoai_redis
+    container_name: schedulo_redis
     ports:
-      - "127.0.0.1:6379:6379"   # localhost only
+      - "127.0.0.1:6379:6379"
     volumes:
       - ./data/redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
     restart: unless-stopped
 
-  # ── FastAPI Backend ─────────────────────────────────────────────
+  # ── Database Migration (runs once, exits) ────────────────────────────────────
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    container_name: schedulo_migrate
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://schedulo:localpassword123@db:5432/schedulo_local
+      DB_ENGINE: postgresql
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      sh -c "
+        echo 'Running Alembic migrations...' &&
+        alembic upgrade head &&
+        echo 'Migrations complete.'
+      "
+    restart: "no"
+
+  # ── CSV Data Seeding (runs once after migration, exits) ──────────────────────
+  seed:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    container_name: schedulo_seed
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://schedulo:localpassword123@db:5432/schedulo_local
+      DB_ENGINE: postgresql
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    command: >
+      sh -c "
+        echo 'Seeding database from CSVs...' &&
+        python scripts/seed_from_csvs.py &&
+        echo 'Seeding complete.'
+      "
+    restart: "no"
+
+  # ── FastAPI Backend ──────────────────────────────────────────────────────────
   backend:
     build:
       context: .
       dockerfile: Dockerfile.local
-    container_name: chronoai_backend
+    container_name: schedulo_backend
     env_file: .env
     environment:
-      DB_ENGINE: postgresql
-      DATABASE_URL: postgresql+asyncpg://chronoai:localpassword123@db:5432/chronoai_local
-      REDIS_URL: redis://redis:6379/0
-      CELERY_BROKER_URL: redis://redis:6379/0
+      DB_ENGINE:          postgresql
+      DATABASE_URL:       postgresql+asyncpg://schedulo:localpassword123@db:5432/schedulo_local
+      REDIS_URL:          redis://redis:6379/0
+      CELERY_BROKER_URL:  redis://redis:6379/0
       CELERY_RESULT_BACKEND: redis://redis:6379/0
-      ENVIRONMENT: local
-      DEBUG: "true"
-      ALLOWED_ORIGINS: "http://localhost:5173,http://127.0.0.1:5173"
-      STORAGE_BACKEND: local
-      OUTPUT_DIR: /app/outputs
-      MODELS_DIR: /app/models
-      LOGS_DIR: /app/logs
+      ENVIRONMENT:        local
+      DEBUG:              "true"
+      ALLOWED_ORIGINS:    "http://localhost:5173,http://127.0.0.1:5173"
+      STORAGE_BACKEND:    local
+      OUTPUT_DIR:         /app/outputs
+      MODELS_DIR:         /app/models
+      LOGS_DIR:           /app/logs
     ports:
       - "127.0.0.1:8000:8000"
     volumes:
-      - .:/app                          # Live code reload
-      - ./outputs:/app/outputs          # Generated timetable files
-      - ./models:/app/models            # Saved ML model files
-      - ./logs:/app/logs                # Application logs
+      - ./schedulo:/app/schedulo   # mount only source, not entire root (avoids Windows conflicts)
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+      - ./ml_models:/app/ml_models
+      - ./logs:/app/logs
     depends_on:
       db:
         condition: service_healthy
       redis:
-        condition: service_started
-    command: uvicorn chronoai.main:app --host 0.0.0.0 --port 8000 --reload
+        condition: service_healthy
+      seed:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    command: uvicorn schedulo.main:app --host 0.0.0.0 --port 8000 --reload
     restart: unless-stopped
 
-  # ── Celery Worker ───────────────────────────────────────────────
+  # ── Celery Worker ────────────────────────────────────────────────────────────
   celery_worker:
     build:
       context: .
       dockerfile: Dockerfile.local
-    container_name: chronoai_celery
+    container_name: schedulo_celery
     env_file: .env
     environment:
-      DATABASE_URL: postgresql+asyncpg://chronoai:localpassword123@db:5432/chronoai_local
-      REDIS_URL: redis://redis:6379/0
-      CELERY_BROKER_URL: redis://redis:6379/0
+      DATABASE_URL:          postgresql+asyncpg://schedulo:localpassword123@db:5432/schedulo_local
+      REDIS_URL:             redis://redis:6379/0
+      CELERY_BROKER_URL:     redis://redis:6379/0
       CELERY_RESULT_BACKEND: redis://redis:6379/0
-      ENVIRONMENT: local
+      ENVIRONMENT:           local
     volumes:
-      - .:/app
+      - ./schedulo:/app/schedulo
+      - ./data:/app/data
       - ./outputs:/app/outputs
-      - ./models:/app/models
+      - ./ml_models:/app/ml_models
     depends_on:
-      - backend
-      - redis
-    # --pool=solo avoids multiprocessing issues on Windows
-    command: celery -A chronoai.tasks worker --loglevel=info --pool=solo --concurrency=1
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      seed:
+        condition: service_completed_successfully
+    command: celery -A schedulo.tasks worker --loglevel=info --pool=solo --concurrency=1
     restart: unless-stopped
 
-  # ── React Frontend ──────────────────────────────────────────────
+  # ── React Frontend ────────────────────────────────────────────────────────────
   frontend:
     build:
-      context: ./frontend
+      context: .
       dockerfile: Dockerfile.frontend.local
-    container_name: chronoai_frontend
+    container_name: schedulo_frontend
     ports:
       - "127.0.0.1:5173:5173"
     volumes:
-      - ./frontend/src:/app/src         # Live code reload via Vite HMR
+      - ./frontend/src:/app/src   # only src — not node_modules (avoids Windows binary conflicts)
     environment:
       VITE_API_URL: http://localhost:8000
-    command: npm run dev -- --host 0.0.0.0
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
+    command: npm run dev -- --host 0.0.0.0
     restart: unless-stopped

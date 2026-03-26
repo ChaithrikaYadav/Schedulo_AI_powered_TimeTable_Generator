@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   { to: '/',          icon: LayoutDashboard,    label: 'Dashboard'  },
   { to: '/timetable', icon: CalendarDays,       label: 'Timetables' },
   { to: '/generate',  icon: Wand2,              label: 'Generate'   },
-  { to: '/chatbot',   icon: MessageSquareText,  label: 'ChronoBot'  },
+  { to: '/chatbot',   icon: MessageSquareText,  label: 'ScheduloBot'  },
 ] as const
 
 export default function Sidebar() {
@@ -25,7 +25,7 @@ export default function Sidebar() {
           <Brain className="w-4 h-4 text-white" />
         </div>
         <div>
-          <div className="font-bold text-sm leading-tight gradient-text">ChronoAI</div>
+          <div className="font-bold text-sm leading-tight gradient-text">Schedulo</div>
           <div className="text-[10px] text-[var(--text-muted)] leading-tight">Smart Scheduler</div>
         </div>
       </div>

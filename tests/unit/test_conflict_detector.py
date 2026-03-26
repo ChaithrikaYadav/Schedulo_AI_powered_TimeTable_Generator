@@ -1,6 +1,6 @@
 """
 tests/unit/test_conflict_detector.py
-Unit tests for the ChronoAI ConflictDetector.
+Unit tests for the Schedulo ConflictDetector.
 
 Uses the real ConflictDetector(slots) API with SlotData objects.
 Verifies room double-booking (HC-01), faculty double-booking (HC-02),
@@ -32,7 +32,7 @@ def make_slot_data(
     elective_group: str = "",
 ) -> object:
     """Build a SlotData instance from the detector module."""
-    from chronoai.conflict_detector.detector import SlotData
+    from schedulo.conflict_detector.detector import SlotData
     return SlotData(
         slot_id=slot_id,
         timetable_id=timetable_id,
@@ -54,7 +54,7 @@ def make_slot_data(
 # ── Import detector ───────────────────────────────────────────────────────────
 
 try:
-    from chronoai.conflict_detector.detector import ConflictDetector, ConflictType, ConflictSeverity
+    from schedulo.conflict_detector.detector import ConflictDetector, ConflictType, ConflictSeverity
     _DETECTOR_AVAILABLE = True
 except ImportError:
     _DETECTOR_AVAILABLE = False
@@ -249,12 +249,12 @@ class TestConflictDetector:
 class TestConflictDetectorImport:
     def test_module_importable(self):
         """conflict_detector.detector module should be importable."""
-        spec = importlib.util.find_spec("chronoai.conflict_detector.detector")
-        assert spec is not None, "chronoai.conflict_detector.detector not found on sys.path"
+        spec = importlib.util.find_spec("schedulo.conflict_detector.detector")
+        assert spec is not None, "schedulo.conflict_detector.detector not found on sys.path"
 
     def test_slot_data_fields(self):
         """SlotData dataclass must have all required fields."""
-        from chronoai.conflict_detector.detector import SlotData
+        from schedulo.conflict_detector.detector import SlotData
         import dataclasses
         field_names = {f.name for f in dataclasses.fields(SlotData)}
         required = {"slot_id", "timetable_id", "section_id", "day_name",
@@ -264,5 +264,5 @@ class TestConflictDetectorImport:
 
     def test_conflict_type_has_hc01(self):
         """ConflictType enum must expose ROOM_DOUBLE_BOOKING (HC-01)."""
-        from chronoai.conflict_detector.detector import ConflictType
+        from schedulo.conflict_detector.detector import ConflictType
         assert ConflictType.ROOM_DOUBLE_BOOKING.value == "HC-01"

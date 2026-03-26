@@ -1,5 +1,5 @@
 """
-tests/conftest.py — Shared pytest fixtures for ChronoAI tests.
+tests/conftest.py — Shared pytest fixtures for Schedulo tests.
 
 Fixtures:
     async_engine    — In-memory SQLite SQLAlchemy async engine
@@ -36,7 +36,7 @@ def event_loop_policy():
 async def async_engine():
     """Create a fresh in-memory SQLite async engine for each test."""
     from sqlalchemy.ext.asyncio import create_async_engine
-    from chronoai.database import Base
+    from schedulo.database import Base
 
     engine = create_async_engine(
         "sqlite+aiosqlite:///:memory:",
@@ -67,8 +67,8 @@ async def async_session(async_engine) -> AsyncGenerator:
 async def test_client(async_engine):
     """httpx AsyncClient wrapping the FastAPI app, using the test DB engine."""
     import httpx
-    from chronoai.main import app
-    from chronoai import database as db_module
+    from schedulo.main import app
+    from schedulo import database as db_module
 
     # Patch the session factory to use our test engine
     from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
@@ -77,7 +77,10 @@ async def test_client(async_engine):
     original_factory = db_module.AsyncSessionLocal
     db_module.AsyncSessionLocal = test_factory
 
-    async with httpx.AsyncClient(app=app, base_url="http://test") as client:
+    async with httpx.AsyncClient(
+        transport=httpx.ASGITransport(app=app),
+        base_url="http://test",
+    ) as client:
         yield client
 
     db_module.AsyncSessionLocal = original_factory

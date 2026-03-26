@@ -32,7 +32,7 @@ class TestPrototypeScheduler:
 
     @pytest.fixture(scope="class")
     def scheduler(self):
-        from chronoai.scheduler_core.prototype_scheduler import PrototypeScheduler
+        from schedulo.scheduler_core.prototype_scheduler import PrototypeScheduler
         return PrototypeScheduler(random_seed=42)
 
     DEPARTMENT = "School of Computer Science & Engineering"
@@ -138,23 +138,23 @@ class TestPrototypeSchedulerNoCSV:
 
     def test_import_ok(self):
         """PrototypeScheduler should import without errors."""
-        from chronoai.scheduler_core.prototype_scheduler import PrototypeScheduler
+        from schedulo.scheduler_core.prototype_scheduler import PrototypeScheduler
         assert PrototypeScheduler is not None
 
     def test_period_constants(self):
         """PERIODS list should have exactly 9 entries."""
-        from chronoai.scheduler_core.prototype_scheduler import PERIODS
+        from schedulo.scheduler_core.prototype_scheduler import PERIODS
         assert len(PERIODS) == 9, f"Expected 9 periods, got {len(PERIODS)}"
 
     def test_days_constant(self):
         """DAYS list must include Saturday as day 6."""
-        from chronoai.scheduler_core.prototype_scheduler import DAYS
+        from schedulo.scheduler_core.prototype_scheduler import DAYS
         assert "Saturday" in DAYS, "Saturday missing from DAYS constant"
         assert len(DAYS) == 6, f"Expected 6 days, got {len(DAYS)}"
 
     def test_invalid_lab_start_contains_period4_index(self):
         """INVALID_LAB_START must contain index 3 (Period 4 → straddles lunch)."""
-        from chronoai.scheduler_core.prototype_scheduler import INVALID_LAB_START
+        from schedulo.scheduler_core.prototype_scheduler import INVALID_LAB_START
         assert 3 in INVALID_LAB_START, "Period index 3 must be in INVALID_LAB_START"
 
     def test_random_seed_same_shape(self):
@@ -163,7 +163,7 @@ class TestPrototypeSchedulerNoCSV:
         Exact cell equality is not guaranteed because room sampling may
         interact with OS-level PRNG state; we verify structural reproducibility.
         """
-        from chronoai.scheduler_core.prototype_scheduler import PrototypeScheduler
+        from schedulo.scheduler_core.prototype_scheduler import PrototypeScheduler
         if not _CSV_EXISTS:
             pytest.skip("CSV datasets not found")
         s1 = PrototypeScheduler(random_seed=99)

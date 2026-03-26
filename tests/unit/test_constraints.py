@@ -1,6 +1,6 @@
 """
 tests/unit/test_constraints.py
-Unit tests for the ChronoAI constraint engine.
+Unit tests for the Schedulo constraint engine.
 Tests all HC-01 through HC-08 hard constraints and
 SC-01 through SC-05 soft constraints using synthetic slot objects.
 """
@@ -50,13 +50,13 @@ def make_slots_grid(days: int = 6, periods: int = 9) -> list[dict]:
 
 # ── Import constraint engine ───────────────────────────────────────────────────
 try:
-    from chronoai.constraint_engine.base import BaseConstraint, ConstraintViolation
+    from schedulo.constraint_engine.base import BaseConstraint, ConstraintViolation
     _CONSTRAINTS_AVAILABLE = True
 except ImportError:
     _CONSTRAINTS_AVAILABLE = False
 
 try:
-    from chronoai.constraint_engine.hard_constraints import (
+    from schedulo.constraint_engine.hard_constraints import (
         HC01RoomConflict,
         HC02FacultyConflict,
         HC03LunchBreak,
@@ -71,7 +71,7 @@ except ImportError:
     _HARD_CONSTRAINTS_AVAILABLE = False
 
 try:
-    from chronoai.constraint_engine.soft_constraints import (
+    from schedulo.constraint_engine.soft_constraints import (
         SC01PreferredSlots,
         SC02EvenDistribution,
         SC03NoBackToBackLabs,
@@ -282,12 +282,21 @@ class TestSoftConstraints:
         assert isinstance(result, (int, float))
 
 
-# ── ML Pipeline unit tests ────────────────────────────────────────────────────
+# ── ML Pipeline unit tests (skipped if schedulo.ml_pipeline not available) ────
+# Note: schedulo.ml_pipeline was removed from the production codebase.
+# These tests are kept as documentation of the expected API but will skip
+# automatically on any installation that does not have the module.
+try:
+    import schedulo.ml_pipeline  # noqa: F401
+    _ML_PIPELINE_AVAILABLE = True
+except ImportError:
+    _ML_PIPELINE_AVAILABLE = False
 
+@pytest.mark.skipif(not _ML_PIPELINE_AVAILABLE, reason="schedulo.ml_pipeline not installed")
 class TestFeatureEngineer:
     def test_feature_vector_length(self, sample_timetable_dict):
         """FeatureEngineer.extract_raw() must return exactly 20 features."""
-        from chronoai.ml_pipeline.feature_engineering import FeatureEngineer, FEATURE_NAMES
+        from schedulo.ml_pipeline.feature_engineering import FeatureEngineer, FEATURE_NAMES
         fe = FeatureEngineer()
         raw = fe.extract_raw(sample_timetable_dict)
         assert len(raw) == 20
@@ -296,13 +305,13 @@ class TestFeatureEngineer:
     def test_features_are_finite(self, sample_timetable_dict):
         """All features must be finite (no NaN/Inf)."""
         import math
-        from chronoai.ml_pipeline.feature_engineering import FeatureEngineer
+        from schedulo.ml_pipeline.feature_engineering import FeatureEngineer
         fe = FeatureEngineer()
         raw = fe.extract_raw(sample_timetable_dict)
         assert all(math.isfinite(f) for f in raw), "Non-finite feature values found"
 
     def test_transform_one_returns_array(self, sample_timetable_dict):
-        from chronoai.ml_pipeline.feature_engineering import FeatureEngineer
+        from schedulo.ml_pipeline.feature_engineering import FeatureEngineer
         import numpy as np
         fe = FeatureEngineer()
         result = fe.transform_one(sample_timetable_dict)
@@ -310,23 +319,24 @@ class TestFeatureEngineer:
         assert result.shape == (20,)
 
     def test_empty_slots_returns_zeros(self):
-        from chronoai.ml_pipeline.feature_engineering import FeatureEngineer
+        from schedulo.ml_pipeline.feature_engineering import FeatureEngineer
         fe = FeatureEngineer()
         raw = fe.extract_raw({"slots": [], "conflict_count": 0})
         assert all(f == 0.0 for f in raw)
 
 
+@pytest.mark.skipif(not _ML_PIPELINE_AVAILABLE, reason="schedulo.ml_pipeline not installed")
 class TestQualityPredictor:
     def test_predict_in_range(self, sample_timetable_dict, tmp_path):
         """Heuristic quality score must be in [0, 100]."""
-        from chronoai.ml_pipeline.quality_predictor import QualityPredictor
+        from schedulo.ml_pipeline.quality_predictor import QualityPredictor
         qp = QualityPredictor(models_dir=str(tmp_path))
         score = qp.predict(sample_timetable_dict)
         assert 0.0 <= score <= 100.0
 
     def test_clean_timetable_higher_score(self, sample_timetable_dict, clean_timetable_dict, tmp_path):
         """A clean timetable should score higher than a conflicted one."""
-        from chronoai.ml_pipeline.quality_predictor import QualityPredictor
+        from schedulo.ml_pipeline.quality_predictor import QualityPredictor
         qp = QualityPredictor(models_dir=str(tmp_path))
         dirty_score = qp.predict(sample_timetable_dict)
         clean_score = qp.predict(clean_timetable_dict)
@@ -336,15 +346,16 @@ class TestQualityPredictor:
 
     def test_not_trained_by_default(self, tmp_path):
         """Without model file, predictor should fall back to heuristic (is_trained=False)."""
-        from chronoai.ml_pipeline.quality_predictor import QualityPredictor
+        from schedulo.ml_pipeline.quality_predictor import QualityPredictor
         qp = QualityPredictor(models_dir=str(tmp_path))
         assert not qp.is_trained
 
 
+@pytest.mark.skipif(not _ML_PIPELINE_AVAILABLE, reason="schedulo.ml_pipeline not installed")
 class TestAnomalyDetector:
     def test_predict_one_structure(self, sample_timetable_dict, tmp_path):
         """predict_one must return a dict with is_anomaly, anomaly_score, reason."""
-        from chronoai.ml_pipeline.anomaly_detector import AnomalyDetector
+        from schedulo.ml_pipeline.anomaly_detector import AnomalyDetector
         ad = AnomalyDetector(models_dir=str(tmp_path))
         result = ad.predict_one(sample_timetable_dict)
         assert "is_anomaly" in result
@@ -355,7 +366,7 @@ class TestAnomalyDetector:
 
     def test_ghost_timetable_is_anomaly(self, tmp_path):
         """A timetable with 0% utilization should be detected as anomalous."""
-        from chronoai.ml_pipeline.anomaly_detector import AnomalyDetector
+        from schedulo.ml_pipeline.anomaly_detector import AnomalyDetector
         ad = AnomalyDetector(models_dir=str(tmp_path))
         # All FREE slots
         ghost = {

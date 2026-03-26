@@ -1,6 +1,6 @@
 """
 tests/integration/test_api.py
-Integration tests for the ChronoAI FastAPI endpoints.
+Integration tests for the Schedulo FastAPI endpoints.
 
 Uses httpx.AsyncClient to call the actual FastAPI app with an in-memory SQLite
 database injected via the test_client fixture from conftest.py.

@@ -1,5 +1,5 @@
 /**
- * src/lib/api.ts — Typed API client for ChronoAI backend.
+ * src/lib/api.ts — Typed API client for Schedulo backend.
  * All functions return typed Promises; errors are re-thrown as Error instances.
  */
 
@@ -93,16 +93,25 @@ export interface AnalyticsSummary {
   unresolved_conflicts: number
 }
 
+export interface CustomSubject {
+  name: string
+  subject_type: 'THEORY' | 'LAB'
+  duration: number          // periods per session
+  days_per_week: number     // periods per week
+  priority: number          // 1=low 2=medium 3=high
+}
+
 export interface GenerateRequest {
   department: string
   semester?: string
-  algorithm?: 'prototype' | 'csp' | 'ga'
+  algorithm?: 'prototype' | 'fcfs' | 'priority' | 'round_robin' | 'ga'
   random_seed?: number
+  custom_subjects?: CustomSubject[]
 }
 
 export interface GenerateResponse {
   timetable_id: number
-  job_id: string
+  job_id?: string
   status: string
   message: string
 }
@@ -168,3 +177,23 @@ export const sendChatMessage = (body: ChatRequest) =>
     method: 'POST',
     body: JSON.stringify(body),
   })
+
+// Sections within a timetable
+export interface TimetableSection {
+  id: number
+  label: string
+}
+
+export const getTimetableSections = (ttId: number) =>
+  request<{ timetable_id: number; sections: TimetableSection[] }>(`/timetables/${ttId}/sections`)
+
+// Download timetable file (triggers browser download)
+export function downloadTimetable(ttId: number, format: 'xlsx' | 'zip'): void {
+  const url = `/api/timetables/${ttId}/download/${format}`
+  const a = document.createElement('a')
+  a.href = url
+  a.download = `timetable-${ttId}.${format}`
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+}

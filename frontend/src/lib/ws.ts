@@ -21,13 +21,21 @@ export interface ProgressEvent {
 
 type ProgressCallback = (event: ProgressEvent) => void
 
-const WS_BASE = `${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}/ws/progress`
+// In development Vite runs on a different port from the FastAPI backend.
+// Detect dev by checking if we're on a Vite dev port (5173/5174/5175/5176).
+// In production both frontend and backend are on the same host.
+const VITE_PORTS = new Set(['5173', '5174', '5175', '5176'])
+const BACKEND_HOST = VITE_PORTS.has(location.port)
+  ? `${location.hostname}:8000`
+  : location.host
+
+const WS_BASE = `${location.protocol === 'https:' ? 'wss' : 'ws'}://${BACKEND_HOST}/ws/progress`
 
 export class ProgressWebSocket {
   private _ws: WebSocket | null = null
   private _reconnectTimer: ReturnType<typeof setTimeout> | null = null
   private _reconnectDelay = 1000
-  private _maxReconnects = 5
+  private _maxReconnects = 3   // reduced: WS not critical — polling fallback handles completion
   private _reconnectCount = 0
   private _connected = false
 

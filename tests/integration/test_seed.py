@@ -35,7 +35,7 @@ class TestSeedFromCSVs:
     async def test_departments_seeded_correctly(self, async_session):
         """Should have exactly 10 canonical departments after seeding."""
         from sqlalchemy import select, func
-        from chronoai.models import Department
+        from schedulo.models import Department
         from scripts.seed_from_csvs import seed_departments
 
         dept_map = await seed_departments(async_session)
@@ -49,7 +49,7 @@ class TestSeedFromCSVs:
     async def test_rooms_seeded(self, async_session):
         """Should seed ≥ 100 rooms from Room_Dataset.csv."""
         from sqlalchemy import select, func
-        from chronoai.models import Department, Room
+        from schedulo.models import Department, Room
         from scripts.seed_from_csvs import seed_departments, seed_rooms
 
         dept_map = await seed_departments(async_session)
@@ -62,7 +62,7 @@ class TestSeedFromCSVs:
     async def test_sections_seeded(self, async_session):
         """Should seed ≥ 100 sections from Student_Sections_DATASET.csv."""
         from sqlalchemy import select, func
-        from chronoai.models import Department, Section
+        from schedulo.models import Department, Section
         from scripts.seed_from_csvs import seed_departments, seed_sections
 
         dept_map = await seed_departments(async_session)
@@ -75,7 +75,7 @@ class TestSeedFromCSVs:
     async def test_faculty_seeded(self, async_session):
         """Should seed ≥ 50 faculty records."""
         from sqlalchemy import select, func
-        from chronoai.models import Department, Faculty
+        from schedulo.models import Department, Faculty
         from scripts.seed_from_csvs import seed_departments, seed_faculty
 
         dept_map = await seed_departments(async_session)
@@ -88,7 +88,7 @@ class TestSeedFromCSVs:
     async def test_subjects_seeded(self, async_session):
         """Should seed ≥ 100 unique subjects."""
         from sqlalchemy import select, func
-        from chronoai.models import Department, Subject
+        from schedulo.models import Department, Subject
         from scripts.seed_from_csvs import seed_departments, seed_subjects
 
         dept_map = await seed_departments(async_session)
@@ -101,7 +101,7 @@ class TestSeedFromCSVs:
     async def test_idempotency(self, async_session):
         """Running seed twice should not create duplicate records."""
         from sqlalchemy import select, func
-        from chronoai.models import Department
+        from schedulo.models import Department
         from scripts.seed_from_csvs import seed_departments
 
         # Seed twice
@@ -120,7 +120,7 @@ class TestSeedWithoutCSVs:
 
     async def test_departments_seeded_standalone(self, async_session):
         """seed_departments() should always succeed (hardcoded list, no CSV needed)."""
-        from chronoai.models import Department
+        from schedulo.models import Department
         from sqlalchemy import select, func
         from scripts.seed_from_csvs import seed_departments
 

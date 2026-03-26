@@ -4,7 +4,7 @@ import {
   Users, BookOpen, DoorOpen, LayoutGrid, TrendingUp,
   AlertTriangle, Clock, Sparkles,
 } from 'lucide-react'
-import { getTimetables, getSections, getFaculty, getSubjects, type Timetable } from '../lib/api'
+import { getTimetables, getSections, getFaculty, getSubjects, getRooms, type Timetable } from '../lib/api'
 
 interface StatCardProps {
   icon: React.ReactNode
@@ -48,11 +48,12 @@ export default function Dashboard() {
     let cancelled = false
     async function load() {
       try {
-        const [tts, secs, fac, subs] = await Promise.allSettled([
+        const [tts, secs, fac, subs, rooms] = await Promise.allSettled([
           getTimetables(),
           getSections(),
           getFaculty(),
           getSubjects(),
+          getRooms(),
         ])
         if (cancelled) return
         setTimetables(tts.status === 'fulfilled' ? tts.value : [])
@@ -60,7 +61,7 @@ export default function Dashboard() {
           sections: secs.status === 'fulfilled' ? secs.value.length : 0,
           faculty:  fac.status === 'fulfilled'  ? fac.value.length  : 0,
           subjects: subs.status === 'fulfilled' ? subs.value.length : 0,
-          rooms: 0,
+          rooms:    rooms.status === 'fulfilled' ? rooms.value.length : 0,
         })
       } catch (e) {
         if (!cancelled) setError('Could not connect to API. Is the backend running?')
@@ -82,7 +83,7 @@ export default function Dashboard() {
             Dashboard <span className="gradient-text">Overview</span>
           </h1>
           <p className="text-[var(--text-muted)] mt-1 text-sm">
-            ChronoAI — AI-powered university timetable generation
+            Schedulo — AI-powered university timetable generation
           </p>
         </div>
         <button
@@ -127,11 +128,11 @@ export default function Dashboard() {
           sub="Course catalogue"
         />
         <StatCard
-          icon={<TrendingUp className="w-5 h-5 text-rose-400" />}
+          icon={<DoorOpen className="w-5 h-5 text-rose-400" />}
           iconBg="bg-rose-500/10"
-          label="Timetables"
-          value={loading ? '—' : timetables.length}
-          sub="All generations"
+          label="Rooms"
+          value={loading ? '—' : stats.rooms}
+          sub="Classrooms & Labs"
         />
       </div>
 
@@ -205,7 +206,7 @@ export default function Dashboard() {
                     </td>
                     <td className="py-3">
                       <button
-                        onClick={() => nav('/timetable')}
+                        onClick={() => nav(`/timetable?ttId=${tt.id}`)}
                         className="btn btn-ghost text-xs px-2 py-1"
                       >
                         View
@@ -223,7 +224,7 @@ export default function Dashboard() {
       <div className="grid grid-cols-3 gap-4">
         {[
           { label: 'View Timetables', icon: '📅', to: '/timetable', color: 'var(--teal)' },
-          { label: 'Ask ChronoBot',   icon: '🤖', to: '/chatbot',   color: 'var(--violet)' },
+          { label: 'Ask ScheduloBot',   icon: '🤖', to: '/chatbot',   color: 'var(--violet)' },
           { label: 'New Generation',  icon: '⚡', to: '/generate',  color: 'var(--amber)' },
         ].map(({ label, icon, to, color }) => (
           <button

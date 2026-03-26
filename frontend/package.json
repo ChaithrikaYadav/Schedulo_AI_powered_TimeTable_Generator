@@ -1,25 +1,28 @@
 {
-  "name": "chronoai-frontend",
+  "name": "schedulo-frontend",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --port 5173",
+    "start": "concurrently --kill-others-on-fail --names \"API,UI\" --prefix-colors \"cyan.bold,green.bold\" \"cd .. && .venv\\\\Scripts\\\\python.exe run.py\" \"vite --port 5173 --open\"",
+    "backend": "cd .. && .venv\\Scripts\\python.exe run.py",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
+    "lucide-react": "^0.390.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.23.1",
-    "lucide-react": "^0.390.0"
+    "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.0",
     "autoprefixer": "^10.4.19",
+    "concurrently": "^9.2.1",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5",
