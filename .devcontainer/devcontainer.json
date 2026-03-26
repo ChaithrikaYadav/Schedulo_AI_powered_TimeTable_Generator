@@ -1,0 +1,57 @@
+{
+  "name": "Schedulo – AI Timetable Generator",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+
+  "onCreateCommand": "pip install --upgrade pip && pip install -r requirements.local.txt && pip install -e .",
+
+  "postCreateCommand": "cd frontend && npm install && cd .. && cp .env.local.example .env && mkdir -p outputs ml_models logs data/postgres data/redis && python scripts/seed_from_csvs.py || echo '[Setup] Seed will run automatically on first server start'",
+
+  "forwardPorts": [8000, 5173],
+
+  "portsAttributes": {
+    "8000": {
+      "label": "Schedulo Backend API",
+      "onAutoForward": "notify"
+    },
+    "5173": {
+      "label": "Schedulo Frontend (Vite)",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.pylance",
+        "charliermarsh.ruff",
+        "bradlc.vscode-tailwindcss",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker",
+        "GitHub.copilot"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true,
+        "python.formatting.provider": "none",
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "files.eol": "\n"
+      }
+    }
+  },
+
+  "remoteUser": "vscode"
+}

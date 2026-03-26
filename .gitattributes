@@ -1,0 +1,60 @@
+# =============================================================================
+# .gitattributes — Normalize line endings for cross-platform compatibility
+#
+# Without this, git may auto-convert LF↔CRLF causing diff noise when the
+# project is cloned on Windows vs Linux/macOS. This forces everything to LF
+# in the repository and lets each OS check out with its native line ending.
+# =============================================================================
+
+# Default: treat all text files with LF in repo
+* text=auto eol=lf
+
+# Python source — always LF
+*.py linguist-language=Python eol=lf
+
+# TypeScript/JavaScript — always LF
+*.ts eol=lf
+*.tsx eol=lf
+*.js eol=lf
+*.jsx eol=lf
+*.mjs eol=lf
+*.cjs eol=lf
+
+# Config files — always LF
+*.json eol=lf
+*.yaml eol=lf
+*.yml eol=lf
+*.toml eol=lf
+*.ini eol=lf
+*.cfg eol=lf
+*.env eol=lf
+*.md eol=lf
+*.txt eol=lf
+*.sh eol=lf
+*.css eol=lf
+*.html eol=lf
+Makefile eol=lf
+
+# Windows batch scripts — CRLF on checkout (needed for Windows cmd.exe)
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary files — do not touch line endings
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.pkl binary
+*.joblib binary
+*.h5 binary
+*.pt binary
+*.onnx binary
+*.db binary
+*.sqlite binary
+*.zip binary
+*.xlsx binary
+*.docx binary
+*.whl binary
